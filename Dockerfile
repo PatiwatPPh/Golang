@@ -8,7 +8,7 @@ LABEL maintainer="Steven Victor <chikodi543@gmail.com>"
 
 # Install git.
 # Git is required for fetching the dependencies.
-RUN apk update && apk add --no-cache git 
+RUN apk update && apk add --no-cache git
 
 # Set the current working directory inside the container 
 WORKDIR /app
@@ -33,7 +33,7 @@ WORKDIR /root/
 
 # Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
 COPY --from=builder /app/main .
-COPY --from=builder /app/.env .      
+COPY --from=builder /app/.env .       
 
 # Expose port 8080 to the outside world
 EXPOSE 8080
